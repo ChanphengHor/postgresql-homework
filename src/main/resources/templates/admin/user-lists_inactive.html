@@ -38,7 +38,8 @@
 						<!-- Table body -->
 						<tbody>
 							 <!-- Table row -->
-							<tr th:each="user : ${USERS}">
+							<tr th:each="user : ${USERS}"
+								th:if="${user.status} == '0'">
 								<td class="center" th:text="${user.id}">1</td>
 								<td><span th:text="${user.username}">Pheng</span></td>
 								<td th:text="${user.email}">Email</td>

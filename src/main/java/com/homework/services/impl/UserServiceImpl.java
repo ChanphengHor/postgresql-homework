@@ -73,6 +73,11 @@ public class UserServiceImpl implements UserSerivce{
 		return userRepo.countDeactivate();
 	}
 
+	@Override
+	public User findUserByGender(String gender) {
+		return userRepo.findUserbygender(gender);
+	}
+
 	
 
 }

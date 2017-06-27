@@ -13,4 +13,5 @@ public interface UserSerivce {
 	public User findUserByhash(String user_hash);
 	public String countGender(String gender);
 	public int countDeactivate();
+	public User findUserByGender(String gender);
 }

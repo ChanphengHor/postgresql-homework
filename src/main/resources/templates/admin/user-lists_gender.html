@@ -26,11 +26,11 @@
 							<tr>
 								<th class="center" th:text="#{num}">No.</th>
 								<th th:text="#{name}">Name</th>
-								<th th:text="#{email}">Email</th>
+								<th>Email</th>
 								<th th:text="#{gender}" class="text-center">Gender</th>
-								<th th:text="#{phone}">Phone No</th>
-								<th class="text-left" th:text="#{status}">Status</th>
-								<th class="text-center" th:text="#{Cdate}">Create Date</th>
+								<th>Phone No</th>
+								<th class="text-left">Status</th>
+								<th class="text-center">Create Date</th>
 								<th class="text-center" th:text="#{action}">Action</th>
 							</tr>
 						</thead>
@@ -38,7 +38,8 @@
 						<!-- Table body -->
 						<tbody>
 							 <!-- Table row -->
-							<tr th:each="user : ${USERS}">
+							<tr th:each="user : ${USERS}"
+								th:if="${user.gender} == ${IDGEN}">
 								<td class="center" th:text="${user.id}">1</td>
 								<td><span th:text="${user.username}">Pheng</span></td>
 								<td th:text="${user.email}">Email</td>

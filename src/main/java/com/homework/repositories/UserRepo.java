@@ -38,6 +38,30 @@ public interface UserRepo {
 			+ " FROM users WHERE user_hash=#{user_hash}")
 	public  User findUser(String user_hash);
 	
+	@Select("SELECT "
+			+ " id ,"
+			+ " username,"
+			+ " email,"
+			+ " gender,"
+			+ " phonenumber,"
+			+ " status,"
+			+ " user_hash,"
+			+ " created_date "
+			+ " FROM users WHERE gender=#{gender}")
+	public  User findUserbygender(String gender);
+	
+	@Select("SELECT "
+			+ " id ,"
+			+ " username,"
+			+ " email,"
+			+ " gender,"
+			+ " phonenumber,"
+			+ " status,"
+			+ " user_hash,"
+			+ " created_date "
+			+ " FROM users WHERE status='0'")
+	public  User findUserbyInactive();
+	
 	@Select("SELECT count(gender) FROM users WHERE gender=#{gender}")
 	public String countGender(String gender);
 	

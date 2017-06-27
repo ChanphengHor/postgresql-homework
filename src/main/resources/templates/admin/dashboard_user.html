@@ -16,7 +16,6 @@
 					<div class="col-md-3 col-sm-6">
 						<div class="panel-3d animated" style="visibility: visible;">
 							<div class="front">
-
 								<div class="widget text-center">
 									<div class="widget-body padding-none">
 										<div>
@@ -27,7 +26,7 @@
 												</p>
 											</div>
 											<div class="innerAll">
-												<a th:href="@{/admin/user-list}" class="btn btn-inverse" th:text="#{showuserlst}"></a>
+												<a th:href="@{/admin/user-list/gender/m}" class="btn btn-inverse" th:text="#{showgenderM}"></a>
 											</div>
 										</div>
 									</div>
@@ -73,7 +72,7 @@
 												</p>
 											</div>
 											<div class="innerAll">
-												<a th:href="@{/admin/user-list}" class="btn btn-default" th:text="#{showuserlst}"></a>
+												<a th:href="@{/admin/user-list/gender/f}" class="btn btn-default" th:text="#{showgenderF}"></a>
 											</div>
 										</div>
 									</div>
@@ -91,14 +90,7 @@
 									<div class="widget-body padding-none">
 										<div tabindex="5001" style="height: 165px; overflow: hidden; outline: none;">
 											<div class="box-generic border-none text-center">
-												<p class="margin-none">Orders Total</p>
-												<p>
-													<strong class="text-large text-primary">€99,134</strong>
-												</p>
-												<p class="margin-none">
-													<span class="text-success strong">15%</span> <i class="fa fa-fw fa-arrow-up text-success"></i> last 30
-													days
-												</p>
+												
 											</div>
 										</div>
 									</div>
@@ -137,28 +129,7 @@
 									</div>
 									<div class="widget-body padding-none">
 										<div tabindex="5002" style="height: 165px; overflow: hidden; outline: none;">
-											<div class="media innerAll half margin-none">
-												<a class="pull-left" href="#"> <img alt="" class="img-circle media-object" src="/resources/assets//images/people/50/15.jpg">
-												</a>
-												<div class="media-body ">
-													<a class="strong text-success" href=""> <i class="fa fa-circle"></i> Jane Smith
-													</a>
-													<div class="clearfix"></div>
-													<em>10:20 AM - 21/11/2013</em>
-												</div>
-											</div>
-											<hr class="margin-none">
-
-											<div class="media innerAll half margin-none">
-												<a class="pull-left" href="#"> <img alt="" class="img-circle media-object" src="/resources/assets//images/people/50/19.jpg">
-												</a>
-												<div class="media-body ">
-													<a class="strong text-primary" href=""> <i class="fa fa-circle"></i> Mary Deidre
-													</a>
-													<div class="clearfix"></div>
-													<em>10:20 AM - 21/11/2013</em>
-												</div>
-											</div>
+											
 										</div>
 									</div>
 								</div>
@@ -179,7 +150,7 @@
 												</p>
 											</div>
 											<div class="innerAll">
-												<a th:href="@{/admin/user-list}" class="btn btn-info" th:text="#{showuserlst}"></a>
+												<a th:href="@{/admin/user-list/inactive}" class="btn btn-info" th:text="#{showuserinactive}"></a>
 											</div>
 										</div>
 									</div>
@@ -193,7 +164,7 @@
 										<button class="btn btn-xs btn-default pull-right">
 											<i class="fa fa-times"></i>
 										</button>
-										<h4 class="heading">Messages </h4>
+										<h4 class="heading" th:text="${Deactivate} +' '+ #{totaldeactivate}"> </h4>
 									</div>
 									<div class="widget-body padding-none">
 
@@ -201,12 +172,7 @@
 											<div class="media innerAll">
 												<i class="fa fa-chat fa-2x pull-left disabled"></i>
 												<div class="media-body">
-													<div class="pull-right label label-default">2 days</div>
-													<a class="text-info" href="">Adrian Demian</a> <em>wrote:
-													</em>
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit.</p>
-													<a class="btn btn-info btn-xs" href="">read message</a>
+													
 												</div>
 											</div>
 										</div>
@@ -241,7 +207,7 @@
 		<script th:src="@{/resources/assets/components/library/bootstrap/js/bootstrap.min.js?v=v1.2.3}"></script>
 		<script th:src="@{/resources/assets/components/plugins/nicescroll/jquery.nicescroll.min.js?v=v1.2.3}"></script>
 		<script th:src="@{/resources/assets/components/plugins/breakpoints/breakpoints.js?v=v1.2.3}"></script>
-		<script th:src="@{/resources/assets/components/core/js/animations.init.js?v=v1.2.3}"></script>
+		<!--  <script th:src="@{/resources/assets/components/core/js/anim vations.init.js?v=v1.2.3}"></script>-->
 		<script th:src="@{/resources/assets/components/modules/admin/charts/flot/assets/lib/jquery.flot.js?v=v1.2.3}"></script>
 		<script th:src="@{/resources/assets/components/modules/admin/charts/flot/assets/lib/jquery.flot.resize.js?v=v1.2.3}"></script>
 		<script th:src="@{/resources/assets/components/modules/admin/charts/flot/assets/lib/plugins/jquery.flot.tooltip.min.js?v=v1.2.3}"></script>

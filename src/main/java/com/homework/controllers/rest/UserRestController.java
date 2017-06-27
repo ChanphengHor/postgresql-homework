@@ -67,4 +67,21 @@ public class UserRestController {
 		model.addAttribute("USER",userService.findUserByhash(userhash));
 		return "/admin/user-detail";
 	}
+	@RequestMapping({"/user-list/gender/M","/user-list/gender/m"})
+	public String filterGenderMale(ModelMap model){
+		model.addAttribute("USERS",userService.viewAll());
+		model.addAttribute("IDGEN", "M");
+		return "/admin/user-lists_gender";
+	}
+	@RequestMapping({"/user-list/gender/F","/user-list/gender/f"})
+	public String filterGenderFemale(ModelMap model){
+		model.addAttribute("USERS",userService.viewAll());
+		model.addAttribute("IDGEN", "F");
+		return "/admin/user-lists_gender";
+	}
+	@RequestMapping({"/user-list/inactive","/user-list/not-active"})
+	public String filterDeactivate(ModelMap model){
+		model.addAttribute("USERS",userService.viewAll());
+		return "/admin/user-lists_inactive";
+	}
 }
