@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="/admin/admin-layout">
+<head>
+<meta charset="ISO-8859-1">
+<title>Dashboard</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div id="content">
+			<h1 class="bg-white content-heading border-bottom"
+				th:text="#{Dashboard}">Dashboard</h1>
+			<div class="innerAll spacing-x2">
+				<div class="row">
+					<div class="col-md-3 col-sm-6">
+						<div class="panel-3d animated" style="visibility: visible;">
+							<div class="front">
+
+								<div class="widget text-center">
+									<div class="widget-body padding-none">
+										<div>
+											<div class="innerAll bg-inverse">
+												<p class="lead text-white strong margin-none">
+													<i class="fa fa-male animated fadeInDown" style="visibility: visible;"></i><br>
+													<span th:text="${Male} +' '+ #{maleUsage}"></span>
+												</p>
+											</div>
+											<div class="innerAll">
+												<a th:href="@{/admin/user-list}" class="btn btn-inverse" th:text="#{showuserlst}"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="back">
+
+								<div class="widget widget-inverse widget-scroll" data-scroll-height="165px">
+									<div class="widget-head">
+										<button class="btn btn-xs btn-default pull-right">
+											<i class="fa fa-times"></i>
+										</button>
+										<h4 class="heading">Messages </h4>
+									</div>
+									<div class="widget-body padding-none">
+
+										<div tabindex="5003" style="height: 165px; overflow: hidden; outline: none;">
+											<div class="media innerAll">
+												<i class="fa fa-chat fa-2x pull-left disabled"></i>
+												<div class="media-body">
+													
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="panel-3d animated" style="visibility: visible;">
+							<div class="front">
+
+								<div class="widget text-center">
+									<div class="widget-body padding-none">
+										<div>
+											<div class="innerAll bg-default">
+												<p class="lead strong margin-none">
+													<i class="fa fa-female animated fadeInDown" style="visibility: visible;"></i><br>
+													<span th:text="${Female} +' '+ #{femaleUsage}"></span>
+												</p>
+											</div>
+											<div class="innerAll">
+												<a th:href="@{/admin/user-list}" class="btn btn-default" th:text="#{showuserlst}"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="back">
+								<div class="widget widget-inverse widget-scroll" data-scroll-height="165px">
+									<div class="widget-head">
+										<button class="btn btn-xs btn-default pull-right">
+											<i class="fa fa-times"></i>
+										</button>
+										<h4 class="heading">Orders</h4>
+									</div>
+									<div class="widget-body padding-none">
+										<div tabindex="5001" style="height: 165px; overflow: hidden; outline: none;">
+											<div class="box-generic border-none text-center">
+												<p class="margin-none">Orders Total</p>
+												<p>
+													<strong class="text-large text-primary">€99,134</strong>
+												</p>
+												<p class="margin-none">
+													<span class="text-success strong">15%</span> <i class="fa fa-fw fa-arrow-up text-success"></i> last 30
+													days
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							<div id="ascrail2001" class="nicescroll-rails" style="width: 7px; z-index: 800; cursor: default; position: absolute; top: 41px; left: 296px; height: 165px; display: none; opacity: 0;"><div style="position: relative; top: 0px; float: right; width: 5px; height: 164px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div></div><div id="ascrail2001-hr" class="nicescroll-rails" style="height: 7px; z-index: 800; top: 199px; left: 1px; position: absolute; cursor: default; display: none; width: 295px; opacity: 0;"><div style="position: relative; top: 0px; height: 5px; width: 302px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div></div></div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="panel-3d animated" style="visibility: visible;">
+							<div class="front">
+
+								<div class="widget text-center">
+									<div class="widget-body padding-none">
+										<div>
+											<div class="innerAll bg-success">
+												<p class="lead strong margin-none text-white">
+													<i class="fa fa-list-alt animated fadeInDown" style="visibility: visible;"></i><br>
+													<span th:text="${TOTAL} +' '+ #{totaluser}"></span>
+												</p>
+											</div>
+											<div class="innerAll">
+												<a th:href="@{/admin/user-list}" class="btn btn-success" th:text="#{showuserlst}"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="back">
+								<div class="widget widget-inverse widget-scroll" data-scroll-height="165px">
+									<div class="widget-head">
+										<button class="btn btn-xs btn-default pull-right">
+											<i class="fa fa-times"></i>
+										</button>
+										<h4 class="heading">Bookings</h4>
+									</div>
+									<div class="widget-body padding-none">
+										<div tabindex="5002" style="height: 165px; overflow: hidden; outline: none;">
+											<div class="media innerAll half margin-none">
+												<a class="pull-left" href="#"> <img alt="" class="img-circle media-object" src="/resources/assets//images/people/50/15.jpg">
+												</a>
+												<div class="media-body ">
+													<a class="strong text-success" href=""> <i class="fa fa-circle"></i> Jane Smith
+													</a>
+													<div class="clearfix"></div>
+													<em>10:20 AM - 21/11/2013</em>
+												</div>
+											</div>
+											<hr class="margin-none">
+
+											<div class="media innerAll half margin-none">
+												<a class="pull-left" href="#"> <img alt="" class="img-circle media-object" src="/resources/assets//images/people/50/19.jpg">
+												</a>
+												<div class="media-body ">
+													<a class="strong text-primary" href=""> <i class="fa fa-circle"></i> Mary Deidre
+													</a>
+													<div class="clearfix"></div>
+													<em>10:20 AM - 21/11/2013</em>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							<div id="ascrail2002" class="nicescroll-rails" style="width: 7px; z-index: 800; cursor: default; position: absolute; top: 41px; left: 184px; height: 165px; display: none;"><div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div></div><div id="ascrail2002-hr" class="nicescroll-rails" style="height: 7px; z-index: 800; top: 199px; left: 1px; position: absolute; cursor: default; display: none;"><div style="position: relative; top: 0px; height: 5px; width: 0px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div></div></div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="panel-3d animated" style="visibility: visible;">
+							<div class="front">
+
+								<div class="widget text-center">
+									<div class="widget-body padding-none">
+										<div>
+											<div class="bg-info innerAll">
+												<p class="lead strong margin-none text-white">
+													<i class="fa fa-minus-circle animated fadeInDown" style="visibility: visible;"></i><br>
+													<span th:text="${Deactivate} +' '+ #{totaldeactivate}"></span>
+												</p>
+											</div>
+											<div class="innerAll">
+												<a th:href="@{/admin/user-list}" class="btn btn-info" th:text="#{showuserlst}"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="back">
+
+								<div class="widget widget-inverse widget-scroll" data-scroll-height="165px">
+									<div class="widget-head">
+										<button class="btn btn-xs btn-default pull-right">
+											<i class="fa fa-times"></i>
+										</button>
+										<h4 class="heading">Messages </h4>
+									</div>
+									<div class="widget-body padding-none">
+
+										<div tabindex="5003" style="height: 165px; overflow: hidden; outline: none;">
+											<div class="media innerAll">
+												<i class="fa fa-chat fa-2x pull-left disabled"></i>
+												<div class="media-body">
+													<div class="pull-right label label-default">2 days</div>
+													<a class="text-info" href="">Adrian Demian</a> <em>wrote:
+													</em>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing
+														elit.</p>
+													<a class="btn btn-info btn-xs" href="">read message</a>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+							<div id="ascrail2003" class="nicescroll-rails" style="width: 7px; z-index: 800; cursor: default; position: absolute; top: 41px; left: 184px; height: 165px; display: none;"><div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div></div><div id="ascrail2003-hr" class="nicescroll-rails" style="height: 7px; z-index: 800; top: 199px; left: 1px; position: absolute; cursor: default; display: none;"><div style="position: relative; top: 0px; height: 5px; width: 0px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div></div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div layout:fragment="script">
+		<script>
+	var basePath = '',
+		commonPath = '/resources/assets/',
+		rootPath = '/',
+		DEV = false,
+		componentsPath = '/resources/assets/components/';
+	
+	var primaryColor = '#cb4040',
+		dangerColor = '#b55151',
+		infoColor = '#466baf',
+		successColor = '#8baf46',
+		warningColor = '#ab7a4b',
+		inverseColor = '#45484d';
+	
+	var themerPrimaryColor = primaryColor;
+	</script>
+		<script th:src="@{/resources/assets/components/library/bootstrap/js/bootstrap.min.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/plugins/nicescroll/jquery.nicescroll.min.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/plugins/breakpoints/breakpoints.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/core/js/animations.init.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/modules/admin/charts/flot/assets/lib/jquery.flot.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/modules/admin/charts/flot/assets/lib/jquery.flot.resize.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/modules/admin/charts/flot/assets/lib/plugins/jquery.flot.tooltip.min.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/modules/admin/charts/flot/assets/custom/js/flotcharts.common.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/modules/admin/charts/flot/assets/custom/js/flotchart-simple.init.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/modules/admin/charts/flot/assets/custom/js/flotchart-simple-bars.init.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/modules/admin/widgets/widget-chat/assets/js/widget-chat.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/plugins/slimscroll/jquery.slimscroll.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/modules/admin/forms/elements/bootstrap-datepicker/assets/lib/js/bootstrap-datepicker.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/modules/admin/forms/elements/bootstrap-datepicker/assets/custom/js/bootstrap-datepicker.init.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/modules/admin/charts/easy-pie/assets/lib/js/jquery.easy-pie-chart.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/modules/admin/charts/easy-pie/assets/custom/easy-pie.init.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/modules/admin/widgets/widget-scrollable/assets/js/widget-scrollable.init.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/plugins/holder/holder.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/core/js/sidebar.main.init.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/core/js/sidebar.collapse.init.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/helpers/themer/assets/plugins/cookie/jquery.cookie.js?v=v1.2.3}"></script>
+		<script th:src="@{/resources/assets/components/core/js/core.init.js?v=v1.2.3}"></script>	
+	</div>
+</body>
+</html>

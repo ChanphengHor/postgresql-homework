@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="/admin/admin-layout">
+<head>
+<meta charset="ISO-8859-1">
+<title>Dashboard</title>
+</head>
+<body>
+
+	<div layout:fragment="content">
+		<div id="content">
+		<h1 class="content-heading bg-white border-bottom" th:text="#{title_tbl}">Tables</h1>
+		<div class="innerAll spacing-x2">
+			<div class="widget widget-inverse">
+				<!-- Widget heading -->
+				<div class="widget-head">
+					<h4 class="heading" th:text="#{title_tbl}">Striped Table</h4>
+				</div>
+				<!-- // Widget heading END -->
+				<div class="widget-body">
+					<!-- Table -->
+					<table class="table table-bordered table-striped table-white">
+						<!-- Table heading -->
+						<thead>
+							<tr>
+								<th class="center" th:text="#{num}">No.</th>
+								<th th:text="#{name}">Name</th>
+								<th>Email</th>
+								<th th:text="#{gender}" class="text-center">Gender</th>
+								<th>Phone No</th>
+								<th class="text-left">Status</th>
+								<th class="text-center">Create Date</th>
+								<th class="text-center" th:text="#{action}">Action</th>
+							</tr>
+						</thead>
+						<!-- // Table heading END -->
+						<!-- Table body -->
+						<tbody>
+							 <!-- Table row -->
+							<tr th:each="user : ${USERS}">
+								<td class="center" th:text="${user.id}">1</td>
+								<td><span th:text="${user.username}">Pheng</span></td>
+								<td th:text="${user.email}">Email</td>
+								<td class="text-center" th:text="${user.gender}">M</td>
+								<td th:text="${user.phonenumber}">012364654</td>
+								<td class="text-left">
+									<span class="label label-success" th:if="${user.status} == 1" th:text="#{active}">Active</span>
+									<span class="label label-primary" th:if="${user.status} == 0" th:text="#{inactive}">Deactivate</span>
+								</td>
+								<td class="text-center" th:text="${#dates.format(user.created_date, 'dd-MMM-yyyy')}">0</td>
+								<td class="text-center">
+									<div class="btn-group btn-group-xs ">
+										<a th:href="@{/admin/user/detail/{userhash}(userhash=${user.user_hash})}" class="btn btn-success"><i class="fa fa-edit"></i></a>
+										<a th:href="@{/admin/user/update/{userhash}(userhash=${user.user_hash})}" class="btn btn-inverse"><i class="fa fa-pencil"></i></a>
+										<a th:href="@{/admin/user/delete/{userhash}(userhash=${user.user_hash})}" onclick="return confirm('Are you sure to delete... ?')" class="btn btn-danger"><i class="fa fa-times"></i></a>
+									</div>
+								</td>
+							</tr>
+							<!-- // Table row END -->
+						</tbody>
+						<!-- // Table body END -->
+					</table>
+					<!-- // Table END -->
+				</div>
+			</div>
+			<!-- // Widget END -->
+		</div>
+		</div>
+	</div>
+	<div layout:fragment="script">
+		<script>
+	var basePath = '',
+		commonPath = '../assets/',
+		rootPath = '../',
+		DEV = false,
+		componentsPath = '../assets/components/';
+	
+	var primaryColor = '#cb4040',
+		dangerColor = '#b55151',
+		infoColor = '#466baf',
+		successColor = '#8baf46',
+		warningColor = '#ab7a4b',
+		inverseColor = '#45484d';
+	
+	var themerPrimaryColor = primaryColor;
+	</script>
+	
+	<script th:src="@{/resources/assets/components/library/bootstrap/js/bootstrap.min.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/plugins/nicescroll/jquery.nicescroll.min.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/plugins/breakpoints/breakpoints.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/core/js/animations.init.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/modules/admin/tables/datatables/assets/lib/js/jquery.dataTables.min.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/modules/admin/tables/datatables/assets/lib/extras/TableTools/media/js/TableTools.min.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/modules/admin/tables/datatables/assets/lib/extras/ColVis/media/js/ColVis.min.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/modules/admin/tables/datatables/assets/custom/js/DT_bootstrap.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/modules/admin/tables/datatables/assets/custom/js/datatables.init.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/modules/admin/forms/elements/fuelux-checkbox/fuelux-checkbox.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/modules/admin/forms/elements/bootstrap-select/assets/lib/js/bootstrap-select.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/modules/admin/forms/elements/bootstrap-select/assets/custom/js/bootstrap-select.init.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/modules/admin/tables/classic/assets/js/tables-classic.init.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/plugins/holder/holder.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/core/js/sidebar.main.init.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/core/js/sidebar.collapse.init.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/helpers/themer/assets/plugins/cookie/jquery.cookie.js?v=v1.2.3}"></script>
+	<script th:src="@{/resources/assets/components/core/js/core.init.js?v=v1.2.3}"></script>	
+
+	</div>
+
+</body>
+</html>
